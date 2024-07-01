@@ -13,7 +13,7 @@ jobs:
           echo $(ls)
           ls
           echo $(ls) > cat.txt
-          cat dat.txt
+          cat cat.txt
       
       - name: "upload devOS.bin"
         uses: actions/upload-artifact@v2
