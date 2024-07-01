@@ -10,13 +10,18 @@ jobs:
           echo "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"" >> ~/.bashrc
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install i686-elf-gcc
-          echo $(ls)
-          ls
-          echo $(ls) > cat.txt
-          cat cat.txt
+
+      - name: "download source code"
+        run: git clone https://github.com/Alonecoder2011/devOS && cd devOS
+
+      - name: "prepare for build"
+        run: chmod +x ./util/*.sh
+      
+      - name: "build devOS"
+        run: ./util/mkkernel.sh --buildrun
       
       - name: "upload devOS.bin"
         uses: actions/upload-artifact@v2
         with:
           name: devOS.bin
-          path: ./cat.txt
+          path: ./bin/devOS.bin
