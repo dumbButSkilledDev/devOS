@@ -6,6 +6,8 @@ run commands:
 ```
     git clone https://github.com/Alonecoder2011/devOS
     cd devOS
+    chmod +x ./util/mkkernel.sh
+    chmod +x ./util/mkboot.sh
     ./util/mkkernel.sh --buildrun # that builds the bootloader and kernel
     run the bootloader:
     if u want to run install qemu then run: qemu-system-x86_64 -hda ./bin/devOS.bin
