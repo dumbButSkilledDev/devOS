@@ -6,7 +6,7 @@ struct idtr_descriptor idtr_desc;
 extern void idt_load(void *ptr);
 
 void idt_zero_err() {
-    kernel_panic("You can not divide by zero.", "BRO_TRIED_TO_DIV_BY_ZERO");
+    kernel_panic("You can not divide by zero. I made you divide by zero. This is intented, btw ccp is cool i love xi jing bing", "BRO_TRIED_TO_DIV_BY_ZERO");
     while (1) {}
 }
 
