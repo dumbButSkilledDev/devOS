@@ -12,7 +12,7 @@ jobs:
           brew install i686-elf-gcc
           echo $(ls)
           ls
-          echo $(ls) > dat.txt
+          echo $(ls) > cat.txt
           cat dat.txt
       
       - name: "upload devOS.bin"
