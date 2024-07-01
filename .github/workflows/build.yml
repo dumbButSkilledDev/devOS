@@ -12,7 +12,7 @@ jobs:
           brew install i686-elf-gcc
           
       - name: "prepare for build"
-        run: chmod +x ./util/*.sh
+        run: ls
       
       - name: "build devOS"
         run: ./util/mkkernel.sh --buildrun
@@ -20,5 +20,5 @@ jobs:
       - name: "upload devOS.bin"
         uses: actions/upload-artifact@v2
         with:
-          name: devOS-bin
+          name: devOS.bin
           path: path/to/devOS.bin
