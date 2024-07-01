@@ -14,8 +14,7 @@ jobs:
           ls
           
       - name: "prepare for build"
-        run: cd ${GITHUB_WORKSPACE} && chmod +x ./util/*.sh
-        
+        run: cd ${GITHUB_WORKSPACE}/devOS && chmod +x ./util/*.sh
       
       - name: "build devOS"
         run: ./util/mkkernel.sh --buildrun
