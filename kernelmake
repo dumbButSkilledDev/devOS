@@ -1,0 +1,20 @@
+# Define the source directory and compiler
+srcdir = ./src/kernel
+cxx = i686-elf-g++
+cxxflags = $(CCFLAGS) -std=c++17
+
+# List all source files in the source directory
+cppfiles := $(wildcard $(srcdir)/*.cpp)
+
+# Generate object file names based on source files
+cppobjs := $(patsubst $(srcdir)/%.cpp, ./bin/%.o, $(cppfiles))
+
+# Pattern rule to compile each .cpp to .o
+./bin/%.o: $(srcdir)/%.cpp | ./bin
+    $(cxx) $(cxxflags) -c $< -o $@
+
+kernelcpp: $(cppobjs)
+
+# Ensure the output directory exists
+./bin:
+    mkdir -p ./bin
