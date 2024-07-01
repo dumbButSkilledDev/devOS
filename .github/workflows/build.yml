@@ -1,0 +1,24 @@
+on: [push]
+jobs:
+  build-img:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "setup depends"
+        run: |
+          sudo apt-get -y update
+          sudo apt-get install -y build-essential git nasm
+          echo "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"" >> ~/.bashrc
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew install i686-elf-gcc
+          
+      - name: "prepare for build"
+        run: chmod +x ./util/*.sh
+      
+      - name: "build devOS"
+        run: ./util/mkkernel.sh --buildrun
+      
+      - name: "upload devOS.bin"
+        uses: actions/upload-artifact@v2
+        with:
+          name: devOS-bin
+          path: path/to/devOS.bin
