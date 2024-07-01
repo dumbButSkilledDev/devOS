@@ -12,7 +12,8 @@ jobs:
           brew install i686-elf-gcc
           
       - name: "prepare for build"
-        run: ls
+        run: cd ${GITHUB_WORKSPACE} && chmod +x ./util/*.sh
+        
       
       - name: "build devOS"
         run: ./util/mkkernel.sh --buildrun
