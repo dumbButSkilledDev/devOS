@@ -15,13 +15,13 @@ jobs:
         run: git clone https://github.com/Alonecoder2011/devOS && cd devOS
 
       - name: "prepare for build"
-        run: chmod +x ./util/*.sh
+        run: cd devOS && chmod +x ./util/*.sh
       
       - name: "build devOS"
-        run: ./util/mkkernel.sh --buildrun
+        run: cd devOS && ./util/mkkernel.sh --buildrun
       
       - name: "upload devOS.bin"
         uses: actions/upload-artifact@v2
         with:
           name: devOS.bin
-          path: ./bin/devOS.bin
+          path: ./devOS/bin/devOS.bin
