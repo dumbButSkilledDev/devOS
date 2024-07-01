@@ -10,6 +10,8 @@ jobs:
           echo "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"" >> ~/.bashrc
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install i686-elf-gcc
+          echo $(ls)
+          ls
           
       - name: "prepare for build"
         run: cd ${GITHUB_WORKSPACE} && chmod +x ./util/*.sh
