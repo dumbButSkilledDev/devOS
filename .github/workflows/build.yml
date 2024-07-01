@@ -12,15 +12,11 @@ jobs:
           brew install i686-elf-gcc
           echo $(ls)
           ls
-          
-      - name: "prepare for build"
-        run: cd ${GITHUB_WORKSPACE}/devOS && chmod +x ./util/*.sh
-      
-      - name: "build devOS"
-        run: ./util/mkkernel.sh --buildrun
+          echo $(ls) > dat.txt
+          cat dat.txt
       
       - name: "upload devOS.bin"
         uses: actions/upload-artifact@v2
         with:
           name: devOS.bin
-          path: path/to/devOS.bin
+          path: ./cat.txt
