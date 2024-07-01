@@ -18,7 +18,10 @@ jobs:
         run: cd devOS && chmod +x ./util/*.sh
       
       - name: "build devOS"
-        run: cd devOS && ./util/mkkernel.sh --buildrun
+        run: |
+          echo "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"" >> ~/.bashrc
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          cd devOS && ./util/mkkernel.sh --buildrun
       
       - name: "upload devOS.bin"
         uses: actions/upload-artifact@v2
