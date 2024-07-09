@@ -1,8 +1,8 @@
 
 #!/bin/bash
 
-includes=-I ./inc/kernel/
-cxxflags= -g -ffreestanding -falign-jumps -falign-functions -falign-labels -falign-loops -fstrength-reduce -fomit-frame-pointer -finline-functions -Wno-unused-function -fno-builtin -Werror -Wno-unused-label -Wno-unused-parameter -nostdlib -nostartfiles -nodefaultlibs -Wall -O0 $includes
+includes="-I ./inc/kernel/"
+cxxflags="-g -ffreestanding -falign-jumps -falign-functions -falign-labels -falign-loops -fstrength-reduce -fomit-frame-pointer -finline-functions -Wno-unused-function -fno-builtin -Werror -Wno-unused-label -Wno-unused-parameter -nostdlib -nostartfiles -nodefaultlibs -Wall -O0 $includes"
 cxx=i686-elf-gcc
 ld=i686-elf-ld
 asm=nasm
