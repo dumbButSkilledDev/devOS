@@ -17,14 +17,32 @@ jobs:
       - name: "prepare for build"
         run: cd devOS && chmod +x ./util/*.sh
       
-      - name: "build devOS"
+      - name: "build devOS (LEGACY)"
         run: |
           echo "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"" >> ~/.bashrc
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           cd devOS && ./util/mkkernel.sh --buildrun
+
+      - name: "build devOS (MULTIBOOT)"
+        run: |
+          echo "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"" >> ~/.bashrc
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          cd devOS && ./util/mkkernel-mb.sh --buildrun
       
       - name: "upload devOS.bin"
         uses: actions/upload-artifact@v2
         with:
           name: devOS.bin
           path: ./devOS/bin/devOS.bin
+
+      - name: "upload multiboot kernel"
+        uses: actions/upload-artifact@v2
+        with:
+          name: multiboot_kernel
+          path: ./devOS/bin/multiboot_kernel
+
+      - name: "upload devOS.iso"
+        uses: actions/upload-artifact@v2
+        with:
+          name: devOS.bin
+          path: ./devOS/bin/devOS.iso

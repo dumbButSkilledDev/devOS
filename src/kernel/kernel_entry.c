@@ -11,7 +11,5 @@ void kernel_entry()
     print("DevKernel Version: 0.1\n");
     print("[Kernel] Handing off control to kernel init!\n");
     kinit();
-    print("[Kernel] Testing IDT....\n");
-    cause_havoc();
-    print("[Kernel] A error should of been thrown!\n");
+    print("[Kernel] KINFO: legacy/multiboot compliant kernel\n");
 }

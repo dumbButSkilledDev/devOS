@@ -1,0 +1,4 @@
+# Ignore all .img, .o, and .bin files
+*.img
+*.o
+*.bin
