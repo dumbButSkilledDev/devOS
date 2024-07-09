@@ -1,6 +1,7 @@
 #include <graphics/textmode.h>
 #include <ver.h>
 #include <init.h>
+#include <x86/hardware/io.h>
 
 extern void cause_havoc();
 

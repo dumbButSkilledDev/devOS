@@ -29,7 +29,7 @@ then
     fi
 elif [ $1 == 'MULTIBOOT' ];
 then
-    i686-elf-as ./src/stage2/32/grub/entry.s -o ./build/multiboot.o
+    nasm -felf32 ./src/stage2/32/grub/entry.s -o ./build/multiboot.o
     echo "[BUILDER] Linking multiboot kernel..."
     # we need to run i686-elf-gcc -T src/stage2/32/grub/multiboot.ld -o bin/multiboot_kernel -ffreestanding -O2 -nostdlib ./build/multiboot.o ./build/*.o -lgcc with somthing to allow multiple definitions
     i686-elf-gcc -T ./src/stage2/32/grub/multiboot.ld -o ./bin/multiboot_kernel -ffreestanding -O2 -nostdlib -z muldefs ./build/multiboot.o ./build/*.o -lgcc

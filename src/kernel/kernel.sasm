@@ -21,7 +21,12 @@ _start:
     in al, 0x92
     or al, 2
     out 0x92, al
+
+    call remap_pic
+
     call kernel_entry
     jmp $
+
+%include "./inc/kernel/x86/hardware/pic.asm"
 
 times 512-($ - $$) db 0
