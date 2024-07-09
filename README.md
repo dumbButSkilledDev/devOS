@@ -1,15 +1,8 @@
 # devOS
-random bootloader and kernel that only says stuff about the ccp
-# How to build
-have i686-elf-gcc (homebrew has it, you can install homebrew on macos and linux) and nasm<br>
-run commands:
-```
-    git clone https://github.com/Alonecoder2011/devOS
-    cd devOS
-    chmod +x ./util/mkkernel.sh
-    chmod +x ./util/mkboot.sh
-    ./util/mkkernel.sh --buildrun # that builds the bootloader and kernel
-    run the bootloader:
-    if u want to run install qemu then run: qemu-system-x86_64 -hda ./bin/devOS.bin
-    Then nut
-```
+random bootloader and kernel that only says stuff about the ccp (currently) (as a joke) (ofc) (wow) (why)
+# Whats the goal.
+Have 4 kernels running at once, i am not joking.<br>
+Will that ever happen?<br>
+Maybe :/<br>
+# Credits
+Temple os. It wasnt affected by the openssh bug. it has nothing to do with thhhhhhherr
