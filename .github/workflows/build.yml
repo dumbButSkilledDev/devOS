@@ -45,5 +45,5 @@ jobs:
       - name: "upload devOS.iso"
         uses: actions/upload-artifact@v2
         with:
-          name: devOS.bin
+          name: devOS_hybrid_x86.iso
           path: ./devOS/bin/devOS.iso
