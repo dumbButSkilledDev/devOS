@@ -9,6 +9,7 @@ jobs:
           sudo apt-get install -y build-essential git nasm
           echo "eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"" >> ~/.bashrc
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          sudo apt-get install -y grub-pc-bin xorriso mtools
           brew install i686-elf-gcc
 
       - name: "download source code"
