@@ -6,8 +6,7 @@ struct idtr_descriptor idtr_desc;
 extern void idt_load(void *ptr);
 
 void idt_zero_err() {
-    kernel_panic("You can not divide by zero. I made you divide by zero. This is intented, btw ccp is cool i love xi jing bing", "BRO_TRIED_TO_DIV_BY_ZERO");
-    while (1) {}
+    print("IDT: Zero Error\n");
 }
 
 void idt_set(int i_no, void *addr) {
@@ -23,6 +22,7 @@ void init_idt() {
     memset(descriptors, 0, sizeof(descriptors));
     idtr_desc.limit = sizeof(descriptors) - 1;
     idtr_desc.base = (uint32_t)descriptors;
+    idtMsg = "[IDT] IDT Check passed!\n";
     idt_set(0, idt_zero_err);
     idt_load(&idtr_desc);
 }

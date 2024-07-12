@@ -20,4 +20,6 @@ struct idtr_descriptor
     uint32_t base; // base addr start of IDT
 } __attribute__((packed));
 
+char *idtMsg;
+
 void load_idt();
