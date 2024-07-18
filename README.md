@@ -5,4 +5,5 @@ Have 4 kernels running at once, i am not joking.<br>
 Will that ever happen?<br>
 Maybe :/<br>
 # Credits
-Temple os. It wasnt affected by the openssh bug. it has nothing to do with thhhhhhherr
+Temple os. It wasnt affected by the openssh bug. it has nothing to do with thhhhhhherr<br>
+The temple is the key. The temple is the key. The temple is the key.
